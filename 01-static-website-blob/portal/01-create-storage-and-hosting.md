@@ -8,7 +8,7 @@
 | Region | Germany West Central (`germanywestcentral`) |
 | Storage account | `stgpstaticsitergl13` |
 | Performance / redundancy | Standard / LRS |
-| Primary endpoint | _TODO_ |
+| Primary endpoint | `https://stgpstaticsitergl13.z1.web.core.windows.net/` |
 
 ## Task 1: Prepare the environment
 
@@ -78,23 +78,48 @@ stgpstaticsitergl13  germanywestcentral  Standard_LRS  StorageV2  Succeeded
 ```
 
 
-
 ## Task 3: Enable static website hosting
 
-Enabled the static website feature, which creates the `$web` container, and set:
+Enable the static website feature, which creates the `$web` container, and set: Index document `index.html`, served at the root URL, and  Error document `404.html`, served for paths that don't exist:
 
-- Index document: `index.html`, served at the root URL
-- Error document: `404.html`, served for paths that don't exist
-
-_TODO: note the primary endpoint URL shown after saving._
+1. Opened the storage account and selected **Static website** under **Data management**.
+2. Set the toggle to **Enabled**.
+3. Entered `index.html` as the index document and `404.html` as the error document path.
+4. Selected **Save**.
+5. Copied the **Primary endpoint** shown after saving: `https://stgpstaticsitergl13.z1.web.core.windows.net/`
 
 ![Static website enabled](./screenshots/04-static-website-enabled.png)
 
+**What changed:**
+
+- A container named `$web` was created automatically. Only files stored there are served.
+- The account gained a public web endpoint, separate from the normal blob endpoint.
+- The site returns an error until `index.html` is uploaded in Exercise 02. That is expected.
+
+**Verification:** the CLI confirms the feature is on and the endpoint matches the portal:
+
+```powershell
+az storage blob service-properties show --account-name stgpstaticsitergl13 --auth-mode login --query "staticWebsite" -o json
+az storage account show --name stgpstaticsitergl13 --resource-group rg-gp-static-website --query "primaryEndpoints.web" -o tsv
+```
+
+```json
+{
+  "defaultIndexDocumentPath": null,
+  "enabled": true,
+  "errorDocument_404Path": "404.html",
+  "indexDocument": "index.html"
+}
+```
+
+```text
+https://stgpstaticsitergl13.z1.web.core.windows.net/
+```
+
 ## Validation
 
-- [ ] Static website shows **Enabled**
-- [ ] A **primary endpoint URL** is displayed
+- [x] Static website shows **Enabled**
+- [x] A **primary endpoint URL** is displayed
 
 ## Notes and issues
-
-_TODO: anything worth mentioning._
+- No errors in this exercise. The only restriction encountered was the limited list of allowed regions on the student subscription, which determined the choice of Germany West Central.
