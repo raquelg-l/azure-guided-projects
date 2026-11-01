@@ -5,16 +5,35 @@
 | Item | Value |
 |------|-------|
 | Resource group | `rg-gp-static-website` |
-| Region | _TODO_ |
+| Region | Germany West Central (`germanywestcentral`) |
 | Storage account | _TODO_ |
 | Performance / redundancy | Standard / LRS |
 | Primary endpoint | _TODO_ |
 
 ## Task 1: Prepare the environment
 
-Created a resource group to hold every resource of the project, so cleanup is a single deletion at the end.
+Create a resource group to hold every resource of the project, so cleanup is a single deletion at the end:
 
-_TODO: describe what I did, any region restrictions I hit, and what I chose._
+1. Signed in to the Azure portal with the student account.
+2. Searched for **Resource groups** and selected **+ Create**.
+3. Named the group `rg-gp-static-website` and selected **Germany West Central** as the region.
+4. Ran **Review + create**, got "Validation passed", then selected **Create**.
+
+**Region choice:** the Azure for Students subscription restricts which regions can be used, so the region was picked from the allowed list rather than by proximity. This region is reused for every resource in the project.
+
+**Verification:** the group appears in the portal, and the CLI confirms it:
+
+```powershell
+az group show --name rg-gp-static-website --query "{name:name, location:location, state:properties.provisioningState}" -o table
+```
+
+```text
+Name                  Location            State
+--------------------  ------------------  ---------
+rg-gp-static-website  germanywestcentral  Succeeded
+```
+
+**Why a resource group?** It groups every resource of the project, so the cleanup exercise only needs to delete this one object.
 
 ![Resource group review page](./screenshots/01-resource-group-review.png)
 
