@@ -19,7 +19,7 @@ Create a resource group to hold every resource of the project, so cleanup is a s
 3. Named the group `rg-gp-static-website` and selected **Germany West Central** as the region.
 4. Ran **Review + create**, got "Validation passed", then selected **Create**.
 
-![Resource group review page](./screenshots/01-resource-group-review.png)
+![Resource group review page](./screenshots/ex01-01-resource-group-review.png)
 
 **Region choice:** the Azure for Students subscription restricts which regions can be used, so the region was picked from the allowed list rather than by proximity. This region is reused for every resource in the project.
 
@@ -56,8 +56,8 @@ Create a general-purpose storage account:
 6. Left every other tab at its default, then ran **Review + create** and **Create**.
 7. When the deployment finished, selected **Go to resource**.
 
-![Storage account basics](./screenshots/02-storage-account-basics.png)
-![Deployment complete](./screenshots/03-deployment-complete.png)
+![Storage account basics](./screenshots/ex01-02-storage-account-basics.png)
+![Deployment complete](./screenshots/ex01-03-deployment-complete.png)
 
 **Why these settings?**
 
@@ -88,7 +88,7 @@ Enable the static website feature, which creates the `$web` container, and set: 
 4. Selected **Save**.
 5. Copied the **Primary endpoint** shown after saving: `https://stgpstaticsitergl13.z1.web.core.windows.net/`
 
-![Static website enabled](./screenshots/04-static-website-enabled.png)
+![Static website enabled](./screenshots/ex01-04-static-website-enabled.png)
 
 **What changed:**
 
