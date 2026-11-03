@@ -56,11 +56,13 @@ Checks every success criterion listed below.
 
 | # | Exercise | Portal | Terraform |
 |---|----------|:------:|:---------:|
-| 01 | [Create storage account and enable hosting](./portal/01-create-storage-and-hosting.md) | Done | Pending |
-| 02 | [Upload and verify site content](./portal/02-upload-and-verify-content.md) | Done | Pending |
-| 03 | [Update the site content](./portal/03-update-site-content.md) | Done | Pending |
-| 04 | [Validate success](./portal/04-validate-success.md) | Done | Pending |
-| 05 | [Clean up resources](./portal/05-clean-up-resources.md) | Done | Pending |
+| 01 | [Create storage account and enable hosting](./portal/01-create-storage-and-hosting.md) | Done | Done |
+| 02 | [Upload and verify site content](./portal/02-upload-and-verify-content.md) | Done | Done |
+| 03 | [Update the site content](./portal/03-update-site-content.md) | Done | Done |
+| 04 | [Validate success](./portal/04-validate-success.md) | Done | Done |
+| 05 | [Clean up resources](./portal/05-clean-up-resources.md) | Done | Done |
+
+The Terraform version is a single configuration covering all exercises: see [terraform/README.md](./terraform/README.md).
 
 ## Success criteria
 
@@ -87,7 +89,11 @@ Checks every success criterion listed below.
 
 ## Lessons learned
 
-_To be completed at the end of the project._
+- The portal is good for learning what each resource is; Terraform makes the same result repeatable and way faster: five resources in about a minute instead of many clicks.
+- Content lives in Git and infrastructure lives in code, so both have a history. Azure itself keeps no history of an overwritten blob by default.
+- Azure separates management permissions (creating resources) from data permissions (reading blobs). Having one does not give you the other.
+- Provider major versions change syntax. Check the current docs instead of copying old examples.
+- Delete what you create. `terraform destroy` or deleting the resource group is the last step of every project.
 
 ## Cost note
 
