@@ -60,7 +60,7 @@ Checks every success criterion listed below.
 | 02 | [Upload and verify site content](./portal/02-upload-and-verify-content.md) | Done | Pending |
 | 03 | [Update the site content](./portal/03-update-site-content.md) | Done | Pending |
 | 04 | [Validate success](./portal/04-validate-success.md) | Done | Pending |
-| 05 | Clean up resources | Pending | Pending |
+| 05 | [Clean up resources](./portal/05-clean-up-resources.md) | Done | Pending |
 
 ## Success criteria
 
