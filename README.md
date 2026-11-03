@@ -12,7 +12,7 @@ Each project is completed **twice**:
 
 | # | Project | Portal | Terraform | Status |
 |---|---------|:------:|:---------:|--------|
-| 01 | [Deploy a static website with Azure Blob Storage](./01-static-website-blob/) | Done | Pending | In progress |
+| 01 | [Deploy a static website with Azure Blob Storage](./01-static-website-blob/) | Done | Done | Done |
 
 ## Repository structure
 
