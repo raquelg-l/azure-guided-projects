@@ -57,8 +57,8 @@ Checks every success criterion listed below.
 | # | Exercise | Portal | Terraform |
 |---|----------|:------:|:---------:|
 | 01 | [Create storage account and enable hosting](./portal/01-create-storage-and-hosting.md) | Done | Pending |
-| 02 | Upload and verify site content | Pending | Pending |
-| 03 | Update the site content | Pending | Pending |
+| 02 | [Upload and verify site content](./portal/02-upload-and-verify-content.md) | Done | Pending |
+| 03 | [Update the site content](./portal/03-update-site-content.md) | Done | Pending |
 | 04 | Validate success | Pending | Pending |
 | 05 | Clean up resources | Pending | Pending |
 
