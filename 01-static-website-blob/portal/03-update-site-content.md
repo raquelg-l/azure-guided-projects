@@ -41,6 +41,8 @@ Opened the properties of both blobs from the container.
 
 ![index.html properties](./screenshots/ex03-02-index-properties.png)
 
+![404.html properties](./screenshots/ex03-03-404-properties.png)
+
 **Verification from the CLI:**
 
 ```powershell
